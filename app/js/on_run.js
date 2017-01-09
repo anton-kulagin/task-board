@@ -1,13 +1,13 @@
 function OnRun($rootScope, AppSettings) {
     'ngInject';
-    
+
     $rootScope.isNavCollapsed = true;
     $rootScope.isCollapsed = false;
     $rootScope.isCollapsedHorizontal = false;
 
-    $rootScope.CollapseNav = ()=>{
-        let isNavBarOpened=document.querySelectorAll('[aria-hidden="false"]');
-        if(isNavBarOpened.length){
+    $rootScope.CollapseNav = ()=> {
+        let isNavBarOpened = document.querySelectorAll('[aria-hidden="false"]');
+        if (isNavBarOpened.length) {
             $rootScope.isNavCollapsed = !$rootScope.isNavCollapsed;
         }
     };

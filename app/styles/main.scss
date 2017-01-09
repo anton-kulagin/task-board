@@ -43,21 +43,24 @@ body {
 }
 
 .mainContainer {
-  padding-top:45px;
+  padding-top: 45px;
 }
 
 .container {
   max-width: 720px;
   min-width: 410px;
 }
+
 .addTask {
   margin-bottom: 10px;
 }
+
 .modal-body textarea {
   max-width: 100%;
   min-width: 100%;
 }
-.taskWrapper>h2 {
+
+.taskWrapper > h2 {
   font-size: 14px;
   padding: 5px 10px;
   margin: 0;
@@ -66,30 +69,32 @@ body {
   font-weight: bold;
 
 }
+
 .taskWrapper {
   padding: 5px 0;
-  top:0;
+  top: 0;
   bottom: 0;
   background-color: #E2E4E6;
   @include border-radius(3px);
 }
 
 .task {
-  margin:10px 10px 20px;
-  border:1px solid #cecece;
+  margin: 10px 10px 20px;
+  border: 1px solid #cecece;
   @include border-radius(5px);
   overflow: hidden;
 }
 
-.task>div {
+.task > div {
   padding: 2px 5px;
 }
+
 .taskId {
   background: #bef624;
 }
 
 .showModal {
-  display:block;
+  display: block;
 }
 
 .updateTask {
@@ -102,6 +107,7 @@ body {
   display: flex;
   overflow: hidden;
 }
+
 .flexbox .col {
   flex: 1;
 }
@@ -109,14 +115,16 @@ body {
 .flexbox .col:nth-child(1) {
   order: 1;
 }
+
 .flexbox .col:nth-child(2) {
   order: 2;
 }
+
 .flexbox .col:nth-child(3) {
   order: 3;
 }
 
-.taskText, .taskDelivery  {
+.taskText, .taskDelivery {
   background: #fff;
 }
 
@@ -132,6 +140,7 @@ body {
 .horizontal-collapse {
   height: 70px;
 }
+
 .navbar-collapse.in {
   overflow-y: hidden;
 }
@@ -139,5 +148,5 @@ body {
 .chartTitle {
   font-weight: bold;
   font-size: 16px;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }

@@ -21,12 +21,12 @@ function ModalDirective() {
                 this.modalTask.state = elem.find('select').val();
                 this.closeModal();
             };
-            
+
             scope.$watch('modalTask', function () {
                 var finishDate = scope.modalTask.finishDate;
                 scope.myDate = new Date();
                 if (finishDate) {
-                        scope.myDate = new Date(finishDate);
+                    scope.myDate = new Date(finishDate);
 
                 }
                 scope.minDate = new Date();

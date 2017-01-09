@@ -8,29 +8,29 @@
 // Typography
 // ------------------------------
 $font-family: Roboto, 'Helvetica Neue', sans-serif !default;
-$font-size:   10px !default;
+$font-size: 10px !default;
 
 $display-4-font-size-base: rem(11.20) !default;
 $display-3-font-size-base: rem(5.600) !default;
 $display-2-font-size-base: rem(4.500) !default;
 $display-1-font-size-base: rem(3.400) !default;
-$headline-font-size-base:  rem(2.400) !default;
-$title-font-size-base:     rem(2.000) !default;
-$subhead-font-size-base:   rem(1.600) !default;
+$headline-font-size-base: rem(2.400) !default;
+$title-font-size-base: rem(2.000) !default;
+$subhead-font-size-base: rem(1.600) !default;
 
-$body-font-size-base:      rem(1.400) !default;
-$caption-font-size-base:   rem(1.200) !default;
+$body-font-size-base: rem(1.400) !default;
+$caption-font-size-base: rem(1.200) !default;
 
 // Layout
 // ------------------------------
 
-$baseline-grid:            8px !default;
-$layout-gutter-width:      ($baseline-grid * 2) !default;
+$baseline-grid: 8px !default;
+$layout-gutter-width: ($baseline-grid * 2) !default;
 
-$layout-breakpoint-xs:     600px !default;
-$layout-breakpoint-sm:     960px !default;
-$layout-breakpoint-md:     1280px !default;
-$layout-breakpoint-lg:     1920px !default;
+$layout-breakpoint-xs: 600px !default;
+$layout-breakpoint-sm: 960px !default;
+$layout-breakpoint-md: 1280px !default;
+$layout-breakpoint-lg: 1920px !default;
 
 // Button
 $button-left-right-padding: rem(0.600) !default;
@@ -46,8 +46,8 @@ $toast-margin: $baseline-grid * 1 !default;
 
 // Whiteframes
 
-$shadow-key-umbra-opacity:      0.2 !default;
-$shadow-key-penumbra-opacity:   0.14 !default;
+$shadow-key-umbra-opacity: 0.2 !default;
+$shadow-key-penumbra-opacity: 0.14 !default;
 $shadow-ambient-shadow-opacity: 0.12 !default;
 
 // NOTE(shyndman): gulp-sass seems to be failing if I split the shadow defs across
@@ -127,7 +127,6 @@ $button-fab-width: rem(5.600) !default;
 $button-fab-height: rem(5.600) !default;
 $button-fab-padding: rem(1.60) !default;
 
-
 // Shared Checkbox variables
 $checkbox-width: 20px !default;
 $checkbox-height: $checkbox-width !default;
@@ -152,7 +151,7 @@ $checkbox-border-width: 2px !default;
 
 @mixin input-placeholder-color($color) {
   $pseudos: '::-webkit-input-placeholder', ':-moz-placeholder', '::-moz-placeholder',
-            ':-ms-input-placeholder',  '::-webkit-input-placeholder';
+  ':-ms-input-placeholder', '::-webkit-input-placeholder';
 
   // It is important to export every pseudo within its own block, because otherwise the placeholder
   // won't be set on the most browsers.
@@ -471,6 +470,7 @@ body {
 [tabindex='-1']:focus {
   outline: none;
 }
+
 .inset {
   padding: 10px;
 }
@@ -551,6 +551,7 @@ input {
 .md-shadow-bottom-z-1 {
   @include md-shadow-bottom-z-1();
 }
+
 .md-shadow-bottom-z-2 {
   @include md-shadow-bottom-z-2();
 }
@@ -583,11 +584,11 @@ input {
   border-radius: 50%;
   &.md-ripple-placed {
     transition: margin $sizeDuration $swift-ease-out-timing-function,
-                border $sizeDuration $swift-ease-out-timing-function,
-                width $sizeDuration $swift-ease-out-timing-function,
-                height $sizeDuration $swift-ease-out-timing-function,
-                opacity $sizeDuration $swift-ease-out-timing-function,
-                transform $sizeDuration $swift-ease-out-timing-function;
+    border $sizeDuration $swift-ease-out-timing-function,
+    width $sizeDuration $swift-ease-out-timing-function,
+    height $sizeDuration $swift-ease-out-timing-function,
+    opacity $sizeDuration $swift-ease-out-timing-function,
+    transform $sizeDuration $swift-ease-out-timing-function;
   }
   &.md-ripple-scaled {
     transform: translate(-50%, -50%) scale(1);
@@ -602,8 +603,12 @@ input {
 
 // Fix issue causing ripple disappear suddenly in Chrome version 51, opacity .15 is close to the opacity when a normal click mouseup
 @keyframes md-remove-ripple {
-  0% { opacity: .15; }
-  100% { opacity: 0; }
+  0% {
+    opacity: .15;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .md-padding {
@@ -657,7 +662,7 @@ input {
 
 html, body {
   &[dir=rtl], &[dir=ltr] {
-     unicode-bidi: embed
+    unicode-bidi: embed
   }
 }
 
@@ -665,11 +670,11 @@ bdo[dir=rtl] {
   direction: rtl;
   unicode-bidi: bidi-override;
 }
+
 bdo[dir=ltr] {
   direction: ltr;
   unicode-bidi: bidi-override;
 }
-
 
 // Global page styles
 //
@@ -679,7 +684,7 @@ bdo[dir=ltr] {
 // render text using sub-pixel anti-aliasing.
 
 html, body {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-touch-callout: none;
 
   min-height: 100%; // [2]
@@ -705,46 +710,56 @@ ul, ol, p, h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.010em;
   line-height: $display-4-font-size-base;
 }
+
 .md-display-3 {
   font-size: $display-3-font-size-base;
   font-weight: 400;
   letter-spacing: -0.005em;
   line-height: $display-3-font-size-base;
 }
+
 .md-display-2 {
   font-size: $display-2-font-size-base;
   font-weight: 400;
   line-height: rem(6.4);
 }
+
 .md-display-1 {
   font-size: $display-1-font-size-base;
   font-weight: 400;
   line-height: rem(4);
 }
+
 .md-headline {
   font-size: $headline-font-size-base;
   font-weight: 400;
   line-height: rem(3.2);
 }
+
 .md-title {
   @include md-title();
 }
+
 .md-subhead {
   @include md-subhead();
 }
+
 /************
  * Body Copy
  ************/
 .md-body-1 {
   @include md-body-1();
 }
+
 .md-body-2 {
   @include md-body-2();
 }
+
 .md-caption {
   font-size: $caption-font-size-base;
   letter-spacing: 0.020em;
 }
+
 .md-button {
   letter-spacing: 0.010em;
 }
@@ -784,22 +799,25 @@ input {
 
 @mixin flex-order-for-name($sizes:null) {
   @if $sizes == null {
-    $sizes : '';
+    $sizes: '';
 
     .flex-order {
-     order : 0;
+      order: 0;
     }
   }
 
   @for $i from -20 through 20 {
-    $order : '';
-    $suffix : '';
+    $order: '';
+    $suffix: '';
 
     @each $s in $sizes {
-      @if $s != '' { $suffix : '#{$s}-#{$i}'; }
-      @else        { $suffix : '#{$i}';       }
+      @if $s != '' {
+        $suffix: '#{$s}-#{$i}';
+      } @else {
+        $suffix: '#{$i}';
+      }
 
-      $order : '.flex-order-#{$suffix}';
+      $order: '.flex-order-#{$suffix}';
     }
 
     #{$order} {
@@ -809,34 +827,45 @@ input {
 }
 
 @mixin offset-for-name($sizes:null) {
-  @if $sizes == null { $sizes : ''; }
+  @if $sizes == null {
+    $sizes: '';
+  }
 
   @for $i from 0 through 19 {
-    $offsets : '';
-    $suffix : '';
+    $offsets: '';
+    $suffix: '';
 
     @each $s in $sizes {
-      @if $s != '' { $suffix : '#{$s}-#{$i * 5}'; }
-      @else        { $suffix : '#{$i * 5}';       }
+      @if $s != '' {
+        $suffix: '#{$s}-#{$i * 5}';
+      } @else {
+        $suffix: '#{$i * 5}';
+      }
 
-      $offsets : '.offset-#{$suffix}, .flex-offset-#{$suffix}';
+      $offsets: '.offset-#{$suffix}, .flex-offset-#{$suffix}';
     }
 
     #{$offsets} {
-      @if $i != 0 { @include rtl-prop(margin-left, margin-right, #{$i * 5 + '%'}, auto); }
-      @else { @include rtl-prop(margin-left, margin-right, 0, auto); }
+      @if $i != 0 {
+        @include rtl-prop(margin-left, margin-right, #{$i * 5 + '%'}, auto);
+      } @else {
+        @include rtl-prop(margin-left, margin-right, 0, auto);
+      }
     }
   }
 
   @each $i in 33 {
-    $offsets : '';
-    $suffix : '';
+    $offsets: '';
+    $suffix: '';
 
     @each $s in $sizes {
-      @if $s != '' {  $suffix : '#{$s}-#{$i}';   }
-      @else        {  $suffix : '#{$i}';         }
+      @if $s != '' {
+        $suffix: '#{$s}-#{$i}';
+      } @else {
+        $suffix: '#{$i}';
+      }
 
-      $offsets : '.offset-#{$suffix}, .flex-offset-#{$suffix} ';
+      $offsets: '.offset-#{$suffix}, .flex-offset-#{$suffix} ';
     }
 
     #{$offsets} {
@@ -845,14 +874,17 @@ input {
   }
 
   @each $i in 66 {
-    $offsets : '';
-    $suffix : '';
+    $offsets: '';
+    $suffix: '';
 
     @each $s in $sizes {
-      @if $s != '' {  $suffix : '#{$s}-#{$i}';   }
-      @else        {  $suffix : '#{$i}';         }
+      @if $s != '' {
+        $suffix: '#{$s}-#{$i}';
+      } @else {
+        $suffix: '#{$i}';
+      }
 
-      $offsets : '.offset-#{$suffix}, .flex-offset-#{$suffix} ';
+      $offsets: '.offset-#{$suffix}, .flex-offset-#{$suffix} ';
     }
 
     #{$offsets} {
@@ -862,8 +894,12 @@ input {
 }
 
 @mixin layout-for-name($name: null) {
-  @if $name == null { $name : '';          }
-  @if $name != ''   { $name : '-#{$name}'; }
+  @if $name == null {
+    $name: '';
+  }
+  @if $name != '' {
+    $name: '-#{$name}';
+  }
 
   .layout#{$name}, .layout#{$name}-column, .layout#{$name}-row {
     box-sizing: border-box;
@@ -873,31 +909,57 @@ input {
     display: -ms-flexbox;
     display: flex;
   }
-  .layout#{$name}-column {  flex-direction: column;     }
-  .layout#{$name}-row    {  flex-direction: row;        }
+  .layout#{$name}-column {
+    flex-direction: column;
+  }
+  .layout#{$name}-row {
+    flex-direction: row;
+  }
 }
 
 @mixin flex-properties-for-name($name: null) {
   $flexName: 'flex';
   @if $name != null {
     $flexName: 'flex-#{$name}';
-    $name : '-#{$name}';
+    $name: '-#{$name}';
   } @else {
-    $name : '';
+    $name: '';
   }
 
-  .#{$flexName}             { flex: 1;         box-sizing: border-box; }  // === flex: 1 1 0%;
+  .#{$flexName} {
+    flex: 1;
+    box-sizing: border-box;
+  }
+  // === flex: 1 1 0%;
 
-  .#{$flexName}-grow        { flex: 1 1 100%;  box-sizing: border-box; }
-  .#{$flexName}-initial     { flex: 0 1 auto;  box-sizing: border-box; }
-  .#{$flexName}-auto        { flex: 1 1 auto;  box-sizing: border-box; }
-  .#{$flexName}-none        { flex: 0 0 auto;  box-sizing: border-box; }
-  .#{$flexName}-noshrink    { flex: 1 0 auto;  box-sizing: border-box; }
-  .#{$flexName}-nogrow      { flex: 0 1 auto;  box-sizing: border-box; }
+  .#{$flexName}-grow {
+    flex: 1 1 100%;
+    box-sizing: border-box;
+  }
+  .#{$flexName}-initial {
+    flex: 0 1 auto;
+    box-sizing: border-box;
+  }
+  .#{$flexName}-auto {
+    flex: 1 1 auto;
+    box-sizing: border-box;
+  }
+  .#{$flexName}-none {
+    flex: 0 0 auto;
+    box-sizing: border-box;
+  }
+  .#{$flexName}-noshrink {
+    flex: 1 0 auto;
+    box-sizing: border-box;
+  }
+  .#{$flexName}-nogrow {
+    flex: 0 1 auto;
+    box-sizing: border-box;
+  }
 
   // (1-20) * 5 = 0-100%
   @for $i from 0 through 20 {
-    $value : #{$i * 5 + '%'};
+    $value: #{$i * 5 + '%'};
 
     .#{$flexName}-#{$i * 5} {
       flex: 1 1 #{$value};
@@ -913,7 +975,9 @@ input {
       box-sizing: border-box;
 
       // Bug workaround for http://crbug.com/546034 - flex issues on Chrome 48
-      @if $i == 0 {  min-width: 0;  }
+      @if $i == 0 {
+        min-width: 0;
+      }
     }
 
     .layout-column > .#{$flexName}-#{$i * 5} {
@@ -924,14 +988,34 @@ input {
     }
 
     .layout-row {
-	    > .#{$flexName}-33   , > .#{$flexName}-33     {  flex: 1 1 33.33%;  max-width: 33.33%;  max-height: 100%; box-sizing: border-box; }
-	    > .#{$flexName}-66   , > .#{$flexName}-66     {  flex: 1 1 66.66%;  max-width: 66.66%;  max-height: 100%; box-sizing: border-box; }
-	  }
+      > .#{$flexName}-33, > .#{$flexName}-33 {
+        flex: 1 1 33.33%;
+        max-width: 33.33%;
+        max-height: 100%;
+        box-sizing: border-box;
+      }
+      > .#{$flexName}-66, > .#{$flexName}-66 {
+        flex: 1 1 66.66%;
+        max-width: 66.66%;
+        max-height: 100%;
+        box-sizing: border-box;
+      }
+    }
 
-	  .layout-column {
-	    > .#{$flexName}-33   , > .#{$flexName}-33     {  flex: 1 1 33.33%;  max-width: 100%;  max-height: 33.33%; box-sizing: border-box; }
-	    > .#{$flexName}-66   , > .#{$flexName}-66     {  flex: 1 1 66.66%;  max-width: 100%;  max-height: 66.66%; box-sizing: border-box; }
-	  }
+    .layout-column {
+      > .#{$flexName}-33, > .#{$flexName}-33 {
+        flex: 1 1 33.33%;
+        max-width: 100%;
+        max-height: 33.33%;
+        box-sizing: border-box;
+      }
+      > .#{$flexName}-66, > .#{$flexName}-66 {
+        flex: 1 1 66.66%;
+        max-width: 100%;
+        max-height: 66.66%;
+        box-sizing: border-box;
+      }
+    }
 
     .layout#{$name}-row > .#{$flexName}-#{$i * 5} {
       flex: 1 1 #{$value};
@@ -940,7 +1024,9 @@ input {
       box-sizing: border-box;
 
       // Bug workaround for http://crbug.com/546034 - flex issues on Chrome 48
-      @if $i == 0 {  min-width: 0;  }
+      @if $i == 0 {
+        min-width: 0;
+      }
     }
 
     .layout#{$name}-column > .#{$flexName}-#{$i * 5} {
@@ -950,26 +1036,52 @@ input {
       box-sizing: border-box;
 
       // Bug workaround for http://crbug.com/546034 - flex issues on Chrome 48
-      @if $i == 0 {  min-height: 0;  }
+      @if $i == 0 {
+        min-height: 0;
+      }
     }
 
   }
 
   .layout#{$name}-row {
-    > .#{$flexName}-33   , > .#{$flexName}-33     {  flex: 1 1 33.33%;  max-width: 33.33%;  max-height: 100%; box-sizing: border-box; }
-    > .#{$flexName}-66   , > .#{$flexName}-66     {  flex: 1 1 66.66%;  max-width: 66.66%;  max-height: 100%; box-sizing: border-box; }
+    > .#{$flexName}-33, > .#{$flexName}-33 {
+      flex: 1 1 33.33%;
+      max-width: 33.33%;
+      max-height: 100%;
+      box-sizing: border-box;
+    }
+    > .#{$flexName}-66, > .#{$flexName}-66 {
+      flex: 1 1 66.66%;
+      max-width: 66.66%;
+      max-height: 100%;
+      box-sizing: border-box;
+    }
 
     // Bug workaround for http://crbug.com/546034 - flex issues on Chrome 48
-    > .flex                                       { min-width: 0;   }
+    > .flex {
+      min-width: 0;
+    }
 
   }
 
   .layout#{$name}-column {
-    > .#{$flexName}-33   , > .#{$flexName}-33     {  flex: 1 1 33.33%;  max-width: 100%;  max-height: 33.33%; box-sizing: border-box; }
-    > .#{$flexName}-66   , > .#{$flexName}-66     {  flex: 1 1 66.66%;  max-width: 100%;  max-height: 66.66%; box-sizing: border-box; }
+    > .#{$flexName}-33, > .#{$flexName}-33 {
+      flex: 1 1 33.33%;
+      max-width: 100%;
+      max-height: 33.33%;
+      box-sizing: border-box;
+    }
+    > .#{$flexName}-66, > .#{$flexName}-66 {
+      flex: 1 1 66.66%;
+      max-width: 100%;
+      max-height: 66.66%;
+      box-sizing: border-box;
+    }
 
     // Bug workaround for http://crbug.com/546034 - flex issues on Chrome 48
-    > .flex                                       { min-height: 0;   }
+    > .flex {
+      min-height: 0;
+    }
   }
 
 }
@@ -990,8 +1102,8 @@ input {
   .#{$name},
   .#{$name}-start-stretch // defaults
   {
-    justify-content : flex-start;
-    align-content : stretch;
+    justify-content: flex-start;
+    align-content: stretch;
     align-items: stretch;
   }
 
@@ -1000,18 +1112,16 @@ input {
   .#{$name}-start-start,
   .#{$name}-start-center,
   .#{$name}-start-end,
-  .#{$name}-start-stretch
-  {
+  .#{$name}-start-stretch {
     justify-content: flex-start;
   }
 
   // Main Axis Center
-  .#{$name}-center,           //stretch
+  .#{$name}-center, //stretch
   .#{$name}-center-start,
   .#{$name}-center-center,
   .#{$name}-center-end,
-  .#{$name}-center-stretch
-  {
+  .#{$name}-center-stretch {
     justify-content: center;
   }
 
@@ -1020,8 +1130,7 @@ input {
   .#{$name}-end-start,
   .#{$name}-end-center,
   .#{$name}-end-end,
-  .#{$name}-end-stretch
-  {
+  .#{$name}-end-stretch {
     justify-content: flex-end;
   }
 
@@ -1030,8 +1139,7 @@ input {
   .#{$name}-space-around-center,
   .#{$name}-space-around-start,
   .#{$name}-space-around-end,
-  .#{$name}-space-around-stretch
-  {
+  .#{$name}-space-around-stretch {
     justify-content: space-around;
   }
 
@@ -1040,11 +1148,9 @@ input {
   .#{$name}-space-between-center,
   .#{$name}-space-between-start,
   .#{$name}-space-between-end,
-  .#{$name}-space-between-stretch
-  {
+  .#{$name}-space-between-stretch {
     justify-content: space-between;
   }
-
 
   // Arrange on the Cross Axis
   // center, start, end
@@ -1056,8 +1162,7 @@ input {
   .#{$name}-center-start,
   .#{$name}-end-start,
   .#{$name}-space-between-start,
-  .#{$name}-space-around-start
-  {
+  .#{$name}-space-around-start {
     align-items: flex-start;
     align-content: flex-start;
   }
@@ -1067,8 +1172,7 @@ input {
   .#{$name}-center-center,
   .#{$name}-end-center,
   .#{$name}-space-between-center,
-  .#{$name}-space-around-center
-  {
+  .#{$name}-space-around-center {
     align-items: center;
     align-content: center;
     max-width: 100%;
@@ -1079,8 +1183,7 @@ input {
   .#{$name}-center-center > *,
   .#{$name}-end-center > *,
   .#{$name}-space-between-center > *,
-  .#{$name}-space-around-center > *
-  {
+  .#{$name}-space-around-center > * {
     max-width: 100%;
     box-sizing: border-box;
   }
@@ -1090,8 +1193,7 @@ input {
   .#{$name}-center-end,
   .#{$name}-end-end,
   .#{$name}-space-between-end,
-  .#{$name}-space-around-end
-  {
+  .#{$name}-space-around-end {
     align-items: flex-end;
     align-content: flex-end;
   }
@@ -1101,8 +1203,7 @@ input {
   .#{$name}-center-stretch,
   .#{$name}-end-stretch,
   .#{$name}-space-between-stretch,
-  .#{$name}-space-around-stretch
-  {
+  .#{$name}-space-around-stretch {
     align-items: stretch;
     align-content: stretch;
   }
@@ -1112,8 +1213,7 @@ input {
 
   // NOTE: these`> *` selectors should only be applied for layout="row" or layout="column" children !!
   .layout-padding-sm > *,
-  .layout-padding    > .flex-sm
-  {
+  .layout-padding > .flex-sm {
     padding: $layout-gutter-width / 4;
   }
 
@@ -1121,36 +1221,31 @@ input {
   .layout-padding-gt-sm,
   .layout-padding-md,
 
-  // NOTE: these`> *` selectors should only be applied for layout="row" or layout="column" children !!
-  .layout-padding        > *,
-  .layout-padding-gt-sm  > *,
-  .layout-padding-md     > *,
-
-  .layout-padding        > .flex,
-  .layout-padding        > .flex-gt-sm,
-  .layout-padding        > .flex-md
-  {
+    // NOTE: these`> *` selectors should only be applied for layout="row" or layout="column" children !!
+  .layout-padding > *,
+  .layout-padding-gt-sm > *,
+  .layout-padding-md > *,
+  .layout-padding > .flex,
+  .layout-padding > .flex-gt-sm,
+  .layout-padding > .flex-md {
     padding: $layout-gutter-width / 2;
   }
 
   // NOTE: these`> *` selectors should only be applied for layout="row" or layout="column" children !!
-  .layout-padding-gt-md  > *,
-  .layout-padding-lg     > *,
-  .layout-padding-gt-lg  > *,
-
-  .layout-padding        > .flex-gt-md,
-  .layout-padding        > .flex-lg,
-  .layout-padding        > .flex-lg,
-  .layout-padding        > .flex-gt-lg
-  {
+  .layout-padding-gt-md > *,
+  .layout-padding-lg > *,
+  .layout-padding-gt-lg > *,
+  .layout-padding > .flex-gt-md,
+  .layout-padding > .flex-lg,
+  .layout-padding > .flex-lg,
+  .layout-padding > .flex-gt-lg {
     padding: $layout-gutter-width / 1;
   }
 
   // Margin enhancements
 
-  .layout-margin-sm      > *,
-  .layout-margin         > .flex-sm
-  {
+  .layout-margin-sm > *,
+  .layout-margin > .flex-sm {
     margin: $layout-gutter-width / 4;
   }
 
@@ -1158,27 +1253,23 @@ input {
   .layout-margin-gt-sm,
   .layout-margin-md,
 
-  // NOTE: these`> *` selectors should only be applied for layout="row" or layout="column" children !!
-  .layout-margin         > *,
-  .layout-margin-gt-sm   > *,
-  .layout-margin-md      > *,
-
-  .layout-margin         > .flex,
-  .layout-margin         > .flex-gt-sm,
-  .layout-margin         > .flex-md
-  {
+    // NOTE: these`> *` selectors should only be applied for layout="row" or layout="column" children !!
+  .layout-margin > *,
+  .layout-margin-gt-sm > *,
+  .layout-margin-md > *,
+  .layout-margin > .flex,
+  .layout-margin > .flex-gt-sm,
+  .layout-margin > .flex-md {
     margin: $layout-gutter-width / 2;
   }
 
   // NOTE: these`> *` selectors should only be applied for layout="row" or layout="column" children !!
-  .layout-margin-gt-md  > *,
-  .layout-margin-lg     > *,
-  .layout-margin-gt-lg  > *,
-
-  .layout-margin        > .flex-gt-md,
-  .layout-margin        > .flex-lg,
-  .layout-margin        > .flex-gt-lg
-  {
+  .layout-margin-gt-md > *,
+  .layout-margin-lg > *,
+  .layout-margin-gt-lg > *,
+  .layout-margin > .flex-gt-md,
+  .layout-margin > .flex-lg,
+  .layout-margin > .flex-gt-lg {
     margin: $layout-gutter-width / 1;
   }
 
@@ -1187,7 +1278,7 @@ input {
   }
 
   .layout-nowrap {
-      flex-wrap: nowrap;
+    flex-wrap: nowrap;
   }
 
   .layout-fill {
@@ -1199,12 +1290,12 @@ input {
 }
 
 @mixin layouts_for_breakpoint($name:null) {
-    @include flex-order-for-name($name);
-    @include offset-for-name($name);
-    @include layout-align-for-name($name);
+  @include flex-order-for-name($name);
+  @include offset-for-name($name);
+  @include layout-align-for-name($name);
 
-    @include flex-properties-for-name($name);
-    @include layout-for-name($name);
+  @include flex-properties-for-name($name);
+  @include layout-for-name($name);
 }
 
 $autocomplete-option-height: 48px !default;
@@ -1288,9 +1379,9 @@ md-autocomplete {
 
     md-input-container, input {
       // Layout [flex]
-      flex:1 1 0%;
-      box-sizing:border-box;
-      min-width :0;
+      flex: 1 1 0%;
+      box-sizing: border-box;
+      min-width: 0;
     }
 
     md-progress-linear {
@@ -1459,8 +1550,8 @@ md-backdrop {
   transition: opacity 450ms;
 
   position: absolute;
-  top:0;
-  bottom:0;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
 
@@ -1483,7 +1574,6 @@ md-backdrop {
   &.md-sidenav-backdrop {
     z-index: $z-index-sidenav - 1;
   }
-
 
   &.md-click-catcher {
     position: absolute;
@@ -1509,7 +1599,6 @@ md-backdrop {
   }
 
 }
-
 
 $bottom-sheet-horizontal-padding: 2 * $baseline-grid !default;
 $bottom-sheet-vertical-padding: 1 * $baseline-grid !default;
@@ -1549,7 +1638,6 @@ md-bottom-sheet {
     transform: translate3d(0, $bottom-sheet-hidden-bottom-padding, 0) !important;
   }
 
-
   &.ng-leave-active {
     transform: translate3d(0, 100%, 0) !important;
     transition: $swift-ease-in;
@@ -1587,8 +1675,6 @@ md-bottom-sheet {
 
     }
   }
-
-
 
   &.md-grid {
     padding-left: 3 * $baseline-grid;
@@ -1697,7 +1783,6 @@ $button-margin: rem(0.600) rem(0.800) !default;
 $button-min-width: rem(8.800) !default;
 $button-padding: 0 $button-left-right-padding !default;
 
-
 // Fab buttons
 $button-fab-line-height: rem(5.600) !default;
 $button-fab-mini-width: rem(4.00) !default;
@@ -1758,7 +1843,7 @@ button.md-button::-moz-focus-inner {
   overflow: hidden;
 
   transition: box-shadow $swift-ease-out-duration $swift-ease-out-timing-function,
-              background-color $swift-ease-out-duration $swift-ease-out-timing-function;
+  background-color $swift-ease-out-duration $swift-ease-out-timing-function;
 
   &:focus {
     outline: none;
@@ -1935,6 +2020,7 @@ button.md-button.md-fab {
     }
   }
 }
+
 // IE only
 @media screen and (-ms-high-contrast: active) {
   .md-button.md-raised,
@@ -1961,7 +2047,7 @@ md-card {
 
     &:first-child {
       md-card-avatar {
-       @include rtl-prop(margin-right, margin-left, 12px, auto);
+        @include rtl-prop(margin-right, margin-left, 12px, auto);
       }
     }
 
@@ -1976,7 +2062,7 @@ md-card {
       height: 40px;
 
       .md-user-avatar,
-      md-icon{
+      md-icon {
         border-radius: 50%;
       }
 
@@ -2164,7 +2250,6 @@ md-card {
   }
 }
 
-
 //$checkbox-width: 20px !default;
 //$checkbox-height: $checkbox-width !default;
 //$checkbox-border-radius: 2px !default;
@@ -2269,6 +2354,7 @@ $contact-chip-name-width: rem(12) !default;
     }
   }
 }
+
 .md-contact-suggestion {
   height: ($contact-chip-suggestion-margin * 2) + $contact-chip-suggestion-image-height;
   img {
@@ -2286,9 +2372,11 @@ $contact-chip-name-width: rem(12) !default;
     text-overflow: ellipsis;
   }
 }
+
 .md-contact-chips-suggestions li {
   height: 100%;
 }
+
 .md-chips {
   @include pie-clearfix();
 
@@ -2381,7 +2469,7 @@ $contact-chip-name-width: rem(12) !default;
     padding: $chip-input-padding;
     @include rtl(float, left, right);
     input {
-      &:not([type]),&[type="email"],&[type="number"],&[type="tel"],&[type="url"],&[type="text"] {
+      &:not([type]), &[type="email"], &[type="number"], &[type="tel"], &[type="url"], &[type="text"] {
         border: 0;
         height: $chip-height;
         line-height: $chip-height;
@@ -2404,12 +2492,12 @@ $contact-chip-name-width: rem(12) !default;
       }
     }
     input {
-      border:0;
+      border: 0;
       height: $chip-height;
       line-height: $chip-height;
       padding: 0;
       &:focus {
-        outline:none;
+        outline: none;
       }
     }
     md-autocomplete, md-autocomplete-wrap {
@@ -2425,7 +2513,7 @@ $contact-chip-name-width: rem(12) !default;
       @include rtl(margin, $chip-margin, rtl-value($chip-margin));
     }
     input {
-      background:transparent;
+      background: transparent;
       border-width: 0;
     }
   }
@@ -2435,6 +2523,7 @@ $contact-chip-name-width: rem(12) !default;
     }
   }
 }
+
 // IE only
 @media screen and (-ms-high-contrast: active) {
   .md-chip-input-container,
@@ -2445,7 +2534,6 @@ $contact-chip-name-width: rem(12) !default;
     border: none;
   }
 }
-
 
 md-content {
 
@@ -2470,8 +2558,6 @@ md-content {
   }
 }
 
-
-
 /** Styles for mdCalendar. */
 $md-calendar-cell-size: 44px !default;
 $md-calendar-header-height: 40px !default;
@@ -2485,8 +2571,7 @@ $md-calendar-month-label-font-size: 14px !default;
 $md-calendar-scroll-cue-shadow-radius: 6px !default;
 
 $md-calendar-width: (7 * $md-calendar-cell-size) + (2 * $md-calendar-side-padding) !default;
-$md-calendar-height:
-    ($md-calendar-weeks-to-show * $md-calendar-cell-size) + $md-calendar-header-height !default;
+$md-calendar-height: ($md-calendar-weeks-to-show * $md-calendar-cell-size) + $md-calendar-header-height !default;
 
 // Styles for date cells, including day-of-the-week header cells.
 @mixin md-calendar-cell($height: $md-calendar-cell-size) {
@@ -2599,7 +2684,7 @@ md-calendar {
   height: $md-calendar-cell-size;
   font-size: $md-calendar-month-label-font-size;
   font-weight: 500; // Roboto Medium
-  @include rtl(padding, 0 0 0 $md-calendar-side-padding + $md-calendar-month-label-padding, rtl-value( 0 0 0 $md-calendar-side-padding + $md-calendar-month-label-padding));
+  @include rtl(padding, 0 0 0 $md-calendar-side-padding + $md-calendar-month-label-padding, rtl-value(0 0 0 $md-calendar-side-padding + $md-calendar-month-label-padding));
 
   md-calendar-month &:not(.md-calendar-month-label-disabled) {
     cursor: pointer;
@@ -2652,14 +2737,13 @@ md-calendar {
 }
 
 /** Styles for mdDatepicker. */
-$md-datepicker-button-gap: 12px !default;  // Space between the text input and the calendar-icon button.
-$md-datepicker-border-bottom-gap: 5px !default;  // Space between input and the grey underline.
+$md-datepicker-button-gap: 12px !default; // Space between the text input and the calendar-icon button.
+$md-datepicker-border-bottom-gap: 5px !default; // Space between input and the grey underline.
 $md-date-arrow-size: 5px !default; // Size of the triangle on the right side of the input.
 $md-datepicker-open-animation-duration: 0.2s !default;
 $md-datepicker-triangle-button-width: 36px !default;
 $md-datepicker-input-mask-height: 40px !default;
 $md-datepicker-button-padding: 8px !default;
-
 
 md-datepicker {
   // Don't let linebreaks happen between the open icon-button and the input.
@@ -2741,7 +2825,6 @@ md-datepicker {
     }
   }
 }
-
 
 // Container for the datepicker input.
 .md-datepicker-input-container {
@@ -2928,12 +3011,12 @@ md-dialog {
   &.md-transition-in {
     opacity: 1;
     transition: $swift-ease-out;
-    transform: translate(0,0) scale(1.0);
+    transform: translate(0, 0) scale(1.0);
   }
   &.md-transition-out {
     opacity: 0;
     transition: $swift-ease-out;
-    transform: translate(0,100%) scale(0.2);
+    transform: translate(0, 100%) scale(0.2);
   }
 
   opacity: 0;
@@ -2948,7 +3031,7 @@ md-dialog {
   display: flex;
   flex-direction: column;
 
-  &> form {
+  & > form {
     display: flex;
     flex-direction: column;
     overflow: auto;
@@ -2977,7 +3060,7 @@ md-dialog {
     }
 
     .md-dialog-content-body {
-      width:100%;
+      width: 100%;
     }
 
     .md-prompt-input-container {
@@ -3264,7 +3347,6 @@ md-fab-toolbar {
         @include rtl-prop(margin-left, margin-right, -0.8rem, auto);
       }
 
-
       > .md-button:last-child {
         @include rtl-prop(margin-right, margin-left, 8px, auto);
       }
@@ -3402,7 +3484,6 @@ md-grid-list {
     border-top: 1px solid #fff;
   }
 }
-
 
 md-icon {
   margin: auto;
@@ -3746,7 +3827,7 @@ md-input-container {
     label:not(.md-no-float) {
       transform: translate3d(0, $input-label-float-offset, 0) scale($input-label-float-scale);
       transition: transform $swift-ease-out-timing-function $swift-ease-out-duration,
-                  width $swift-ease-out-timing-function $swift-ease-out-duration;
+      width $swift-ease-out-timing-function $swift-ease-out-duration;
     }
   }
 
@@ -3918,7 +3999,6 @@ md-list {
       .md-list-item-inner {
         min-height: $list-item-dense-height;
         @include ie11-min-height-flexbug($list-item-dense-height);
-
 
         // Layout for controls in primary or secondary divs, or auto-infered first child
 
@@ -4392,12 +4472,12 @@ md-menu-item {
     height: 100%;
     padding-left: 2*$baseline-grid;
     padding-right: 2*$baseline-grid;
-    width:100%;
+    width: 100%;
     md-icon {
-      @include rtl(margin, auto 2*$baseline-grid auto 0,  auto 0 auto 2*$baseline-grid);
+      @include rtl(margin, auto 2*$baseline-grid auto 0, auto 0 auto 2*$baseline-grid);
     }
     p {
-      display:inline-block;
+      display: inline-block;
       margin: auto;
     }
     span {
@@ -4439,7 +4519,6 @@ md-toolbar {
     }
   }
 }
-
 
 md-toolbar {
   &.md-menu-toolbar {
@@ -4597,11 +4676,11 @@ md-nav-ink-bar {
 
   &._md-left {
     transition: left ($duration * $multiplier) $swift-ease-in-out-timing-function,
-        right $duration $swift-ease-in-out-timing-function;
+    right $duration $swift-ease-in-out-timing-function;
   }
   &._md-right {
     transition: left $duration $swift-ease-in-out-timing-function,
-        right ($duration * $multiplier) $swift-ease-in-out-timing-function;
+    right ($duration * $multiplier) $swift-ease-in-out-timing-function;
   }
 }
 
@@ -4682,29 +4761,33 @@ md-nav-extra-content {
 $progress-circular-indeterminate-duration: 2.9s !default;
 
 @keyframes indeterminate-rotate {
-    0%       { transform: rotate(0deg); }
-    100%     { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 // Used to avoid unnecessary layout
 md-progress-circular {
-    position: relative;
-    display: block;
+  position: relative;
+  display: block;
 
-    &._md-progress-circular-disabled {
-        visibility: hidden;
-    }
+  &._md-progress-circular-disabled {
+    visibility: hidden;
+  }
 
-    &.md-mode-indeterminate svg {
-        animation: indeterminate-rotate $progress-circular-indeterminate-duration linear infinite;
-    }
+  &.md-mode-indeterminate svg {
+    animation: indeterminate-rotate $progress-circular-indeterminate-duration linear infinite;
+  }
 
-    svg {
-        position: absolute;
-        overflow: visible;
-        top: 0;
-        left: 0;
-    }
+  svg {
+    position: absolute;
+    overflow: visible;
+    top: 0;
+    left: 0;
+  }
 }
 
 $progress-linear-bar-height: 5px !default;
@@ -4723,11 +4806,11 @@ md-progress-linear {
   }
 
   .md-container {
-    display:block;
+    display: block;
     position: relative;
     overflow: hidden;
 
-    width:100%;
+    width: 100%;
     height: $progress-linear-bar-height;
 
     transform: translate(0, 0) scale(1, 1);
@@ -4770,14 +4853,14 @@ md-progress-linear {
     // ************************************************************
 
     &.md-mode-query {
-        .md-bar1 {
-          display: none;
-        }
-        .md-bar2 {
-          transition: all 0.2s linear;
-          animation: query .8s infinite cubic-bezier(0.390, 0.575, 0.565, 1.000);
-        }
+      .md-bar1 {
+        display: none;
       }
+      .md-bar2 {
+        transition: all 0.2s linear;
+        animation: query .8s infinite cubic-bezier(0.390, 0.575, 0.565, 1.000);
+      }
+    }
 
     &.md-mode-determinate {
       .md-bar1 {
@@ -4788,11 +4871,11 @@ md-progress-linear {
     &.md-mode-indeterminate {
       .md-bar1 {
         animation: md-progress-linear-indeterminate-scale-1 4s infinite,
-                   md-progress-linear-indeterminate-1 4s infinite;
+        md-progress-linear-indeterminate-1 4s infinite;
       }
       .md-bar2 {
         animation: md-progress-linear-indeterminate-scale-2 4s infinite,
-                   md-progress-linear-indeterminate-2 4s infinite;
+        md-progress-linear-indeterminate-2 4s infinite;
       }
     }
 
@@ -4833,6 +4916,7 @@ md-progress-linear {
     transform: translateX(-50%) scale(0, 1);
   }
 }
+
 @keyframes buffer {
   0% {
     opacity: 1;
@@ -4846,6 +4930,7 @@ md-progress-linear {
     background-position: -200px -23px;
   }
 }
+
 @keyframes md-progress-linear-indeterminate-scale-1 {
   0% {
     transform: scaleX(0.1);
@@ -4863,6 +4948,7 @@ md-progress-linear {
     transform: scaleX(0.1);
   }
 }
+
 @keyframes md-progress-linear-indeterminate-1 {
   0% {
     left: -378.6 * 100% / 360;
@@ -4880,6 +4966,7 @@ md-progress-linear {
     left: 343.6 * 100% / 360;
   }
 }
+
 @keyframes md-progress-linear-indeterminate-scale-2 {
   0% {
     transform: scaleX(0.1);
@@ -4897,6 +4984,7 @@ md-progress-linear {
     transform: scaleX(0.1);
   }
 }
+
 @keyframes md-progress-linear-indeterminate-2 {
   0% {
     left: -197.6 * 100% / 360;
@@ -4914,8 +5002,6 @@ md-progress-linear {
     left: 422.6 * 100% / 360;
   }
 }
-
-
 
 $radio-width: 20px !default;
 $radio-height: $radio-width !default;
@@ -4985,8 +5071,8 @@ md-radio-button {
   }
 
   &.md-align-top-left > div.md-container {
-     top: $radio-top-left;
-   }
+    top: $radio-top-left;
+  }
 
   .md-off {
     box-sizing: border-box;
@@ -5150,7 +5236,6 @@ md-input-container {
     margin: 3*$baseline-grid auto !important;
   }
 
-
   // enter: md-select scales in, then options fade in.
   &.md-active {
     display: block;
@@ -5179,7 +5264,6 @@ md-input-container > md-select {
   margin: 0;
   order: 2;
 }
-
 
 // Show the asterisk on the placeholder if the element is required
 //
@@ -5271,13 +5355,12 @@ md-input-container.md-input-has-value .md-select-value {
   padding: 2px 2px 1px;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   position: relative;
   box-sizing: content-box;
   min-width: 8 * $baseline-grid;
   min-height: 26px;
   flex-grow: 1;
-
 
   > span:not(.md-select-icon) {
     max-width: 100%;
@@ -5472,7 +5555,7 @@ md-sidenav {
   }
   &.md-locked-open-remove-active {
     transition: width $swift-ease-in-duration $swift-ease-in-timing-function,
-                min-width $swift-ease-in-duration $swift-ease-in-timing-function;
+    min-width $swift-ease-in-duration $swift-ease-in-timing-function;
     width: 0 !important;
     min-width: 0 !important;
   }
@@ -5485,7 +5568,7 @@ md-sidenav {
 
   &.md-closed.md-locked-open-add-active {
     transition: width $swift-ease-in-duration $swift-ease-in-timing-function,
-                min-width $swift-ease-in-duration $swift-ease-in-timing-function;
+    min-width $swift-ease-in-duration $swift-ease-in-timing-function;
     width: $sidenav-mobile-width;
     min-width: $sidenav-mobile-width;
     transform: translate3d(0%, 0, 0);
@@ -5493,6 +5576,7 @@ md-sidenav {
 
   @extend .md-sidenav-left;
 }
+
 .md-sidenav-backdrop.md-locked-open {
   display: none;
 }
@@ -5539,13 +5623,13 @@ md-sidenav {
   }
 }
 
-$slider-background-color:  rgb(200, 200, 200) !default;
-$slider-size:  48px !default;
-$slider-min-size:  128px !default;
+$slider-background-color: rgb(200, 200, 200) !default;
+$slider-size: 48px !default;
+$slider-min-size: 128px !default;
 
-$slider-track-height:  2px !default;
-$slider-thumb-width:  20px !default;
-$slider-thumb-height:  $slider-thumb-width !default;
+$slider-track-height: 2px !default;
+$slider-thumb-width: 20px !default;
+$slider-thumb-height: $slider-thumb-width !default;
 
 $slider-thumb-default-scale: 0.7 !default;
 $slider-thumb-hover-scale: 0.8 !default;
@@ -5554,7 +5638,7 @@ $slider-thumb-disabled-scale: 0.5 !default;
 $slider-thumb-disabled-border: 4px !default;
 $slider-thumb-focus-duration: .7s !default;
 
-$slider-focus-thumb-width:  34px !default;
+$slider-focus-thumb-width: 34px !default;
 $slider-focus-thumb-height: $slider-focus-thumb-width !default;
 $slider-focus-ring-border-width: 3px !default;
 
@@ -5652,7 +5736,7 @@ md-slider {
     height: 100%;
   }
   .md-track-fill {
-    transition: all .4s cubic-bezier(.25,.8,.25,1);
+    transition: all .4s cubic-bezier(.25, .8, .25, 1);
     transition-property: width, height;
   }
   .md-track-ticks {
@@ -5676,8 +5760,8 @@ md-slider {
     position: absolute;
     @include rtl-prop(left, right, 0, auto);
     top: 50%;
-    transform: translate3d(-50%,-50%,0);
-    transition: all .4s cubic-bezier(.25,.8,.25,1);
+    transform: translate3d(-50%, -50%, 0);
+    transition: all .4s cubic-bezier(.25, .8, .25, 1);
     transition-property: left, right, bottom;
   }
   .md-thumb {
@@ -5700,7 +5784,7 @@ md-slider {
     }
 
     transform: scale($slider-thumb-default-scale);
-    transition: all .4s cubic-bezier(.25,.8,.25,1);
+    transition: all .4s cubic-bezier(.25, .8, .25, 1);
   }
 
   /* The sign that's focused in discrete mode */
@@ -5718,7 +5802,7 @@ md-slider {
     height: $slider-sign-height;
     border-radius: max($slider-sign-height, $slider-sign-width);
 
-    transform: scale(0.4) translate3d(0,(-$slider-sign-top + 10) / 0.4,0);
+    transform: scale(0.4) translate3d(0, (-$slider-sign-top + 10) / 0.4, 0);
     transition: all 0.3s $swift-ease-in-out-timing-function;
 
     /* The arrow pointing down under the sign */
@@ -5734,7 +5818,7 @@ md-slider {
       border-top-style: solid;
 
       opacity: 0;
-      transform: translate3d(0,-8px,0);
+      transform: translate3d(0, -8px, 0);
       transition: all 0.2s $swift-ease-in-out-timing-function;
     }
 
@@ -5757,8 +5841,8 @@ md-slider {
   }
   .md-disabled-thumb {
     @include slider-thumb-position(
-      $slider-thumb-width + $slider-thumb-disabled-border * 2,
-      $slider-thumb-height + $slider-thumb-disabled-border * 2
+                    $slider-thumb-width + $slider-thumb-disabled-border * 2,
+                    $slider-thumb-height + $slider-thumb-disabled-border * 2
     );
     transform: scale($slider-thumb-disabled-scale);
     border-width: $slider-thumb-disabled-border;
@@ -5839,7 +5923,7 @@ md-slider {
         .md-sign,
         .md-sign:after {
           opacity: 1;
-          transform: translate3d(0,0,0) scale(1.0);
+          transform: translate3d(0, 0, 0) scale(1.0);
         }
       }
     }
@@ -5851,7 +5935,7 @@ md-slider {
       .md-sign,
       .md-sign:after {
         opacity: 1;
-        transform: translate3d(0,0,0) scale(1.0);
+        transform: translate3d(0, 0, 0) scale(1.0);
       }
     }
   }
@@ -5922,7 +6006,7 @@ md-slider {
         left: -$slider-sign-height - 12;
         top: $sign-top;
 
-        transform: scale(0.4) translate3d((-$slider-sign-top + 10) / 0.4, 0 ,0);
+        transform: scale(0.4) translate3d((-$slider-sign-top + 10) / 0.4, 0, 0);
 
         /* The arrow pointing left next the sign */
         &:after {
@@ -5935,7 +6019,7 @@ md-slider {
           border-left-style: solid;
 
           opacity: 0;
-          transform: translate3d(0,-8px,0);
+          transform: translate3d(0, -8px, 0);
           transition: all 0.2s ease-in-out;
         }
 
@@ -5948,7 +6032,7 @@ md-slider {
 
       &.md-active,
       .md-focused,
-      &[disabled][readonly]{
+      &[disabled][readonly] {
         .md-sign:after {
           top: 0;
         }
@@ -5962,7 +6046,7 @@ md-slider {
       .md-sign,
       .md-sign:after {
         opacity: 1;
-        transform: translate3d(0,0,0) scale(1.0);
+        transform: translate3d(0, 0, 0) scale(1.0);
       }
     }
   }
@@ -5991,7 +6075,7 @@ md-slider-container {
 
   & > *:first-child,
   & > *:last-child {
-    &:not(md-slider){
+    &:not(md-slider) {
       min-width: $items-width;
       max-width: ($items-width * 2) - 8;
       height: $items-height;
@@ -6035,7 +6119,6 @@ md-slider-container {
   }
 }
 
-
 .md-sticky-clone {
   z-index: 2;
   top: 0;
@@ -6043,7 +6126,7 @@ md-slider-container {
   right: 0;
   position: absolute !important;
 
-  transform: translate3d(-9999px,-9999px,0);
+  transform: translate3d(-9999px, -9999px, 0);
 
   &[sticky-state="active"] {
     transform: translate3d(0, 0, 0);
@@ -6058,7 +6141,7 @@ $subheader-font-size: rem(1.4) !default;
 $subheader-padding: ($baseline-grid * 2) !default;
 $subheader-font-weight: 500 !default;
 $subheader-margin: 0 0 0 0 !default;
-$subheader-sticky-shadow: 0px 2px 4px 0 rgba(0,0,0,0.16) !default;
+$subheader-sticky-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.16) !default;
 
 @keyframes subheaderStickyHoverIn {
   0% {
@@ -6068,6 +6151,7 @@ $subheader-sticky-shadow: 0px 2px 4px 0 rgba(0,0,0,0.16) !default;
     box-shadow: $subheader-sticky-shadow;
   }
 }
+
 @keyframes subheaderStickyHoverOut {
   0% {
     box-shadow: $subheader-sticky-shadow;
@@ -6214,11 +6298,11 @@ md-switch {
     left: 0;
     width: $switch-width - $switch-thumb-size;
     position: absolute;
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
     z-index: 1;
   }
   &.md-checked .md-thumb-container {
-    transform: translate3d(100%,0,0);
+    transform: translate3d(100%, 0, 0);
   }
 
   .md-thumb {
@@ -6291,9 +6375,15 @@ $tabs-tab-width: $baseline-grid * 12 !default;
 $tabs-header-height: 48px !default;
 
 @keyframes md-tab-content-hide {
-  0% { opacity: 1; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 md-tab-data {
@@ -6521,11 +6611,11 @@ md-ink-bar {
   height: 2px;
   &.md-left {
     transition: left ($duration * $multiplier) $swift-ease-in-out-timing-function,
-        right $duration $swift-ease-in-out-timing-function;
+    right $duration $swift-ease-in-out-timing-function;
   }
   &.md-right {
     transition: left $duration $swift-ease-in-out-timing-function,
-        right ($duration * $multiplier) $swift-ease-in-out-timing-function;
+    right ($duration * $multiplier) $swift-ease-in-out-timing-function;
   }
 }
 
@@ -6581,7 +6671,6 @@ $md-toast-content-padding: 3 * $baseline-grid - $button-left-right-padding !defa
 $md-toast-button-left-margin: 3 * $baseline-grid - 2 * $button-left-right-padding !default;
 $md-toast-text-padding: $button-left-right-padding !default;
 
-
 .md-toast-text {
   padding: 0 $md-toast-text-padding;
 }
@@ -6630,9 +6719,9 @@ md-toast {
 
     span {
       // Layout  [flex]
-      flex:1 1 0%;
-      box-sizing:border-box;
-      min-width :0;
+      flex: 1 1 0%;
+      box-sizing: border-box;
+      min-width: 0;
     }
   }
 
@@ -6804,7 +6893,6 @@ md-toast {
   }
 }
 
-
 // While animating, set the toast parent's overflow to hidden so scrollbars do not appear
 .md-toast-animating {
   overflow: hidden !important;
@@ -6944,14 +7032,14 @@ md-toolbar {
       }
     }
   }
-  &> .md-button:first-child {
+  & > .md-button:first-child {
     @include rtl-prop(margin-left, margin-right, $icon-button-margin-offset, auto);
   }
-  &> .md-button:last-child {
+  & > .md-button:last-child {
     @include rtl-prop(margin-right, margin-left, $icon-button-margin-offset, auto);
   }
 
-  &> md-menu:last-child {
+  & > md-menu:last-child {
     @include rtl-prop(margin-right, margin-left, $icon-button-margin-offset, auto);
     & > .md-button {
       @include rtl-prop(margin-right, margin-left, 0, auto);
@@ -6986,7 +7074,6 @@ md-toolbar {
     max-height: $md-toolbar-height-mobile-landscape;
   }
 }
-
 
 $tooltip-fontsize-lg: rem(1) !default;
 $tooltip-fontsize-sm: rem(1.4) !default;
@@ -7121,72 +7208,95 @@ $virtual-repeat-scrollbar-width: 16px !default;
 .md-whiteframe-1dp, .md-whiteframe-z1 {
   box-shadow: $whiteframe-shadow-1dp;
 }
+
 .md-whiteframe-2dp {
   box-shadow: $whiteframe-shadow-2dp;
 }
+
 .md-whiteframe-3dp {
   box-shadow: $whiteframe-shadow-3dp;
 }
-.md-whiteframe-4dp, .md-whiteframe-z2{
+
+.md-whiteframe-4dp, .md-whiteframe-z2 {
   box-shadow: $whiteframe-shadow-4dp;
 }
+
 .md-whiteframe-5dp {
   box-shadow: $whiteframe-shadow-5dp;
 }
+
 .md-whiteframe-6dp {
   box-shadow: $whiteframe-shadow-6dp;
 }
+
 .md-whiteframe-7dp, .md-whiteframe-z3 {
   box-shadow: $whiteframe-shadow-7dp;
 }
+
 .md-whiteframe-8dp {
   box-shadow: $whiteframe-shadow-8dp;
 }
+
 .md-whiteframe-9dp {
   box-shadow: $whiteframe-shadow-9dp;
 }
+
 .md-whiteframe-10dp, .md-whiteframe-z4 {
   box-shadow: $whiteframe-shadow-10dp;
 }
+
 .md-whiteframe-11dp {
   box-shadow: $whiteframe-shadow-11dp;
 }
+
 .md-whiteframe-12dp {
   box-shadow: $whiteframe-shadow-12dp;
 }
-.md-whiteframe-13dp, .md-whiteframe-z5{
+
+.md-whiteframe-13dp, .md-whiteframe-z5 {
   box-shadow: $whiteframe-shadow-13dp;
 }
+
 .md-whiteframe-14dp {
   box-shadow: $whiteframe-shadow-14dp;
 }
+
 .md-whiteframe-15dp {
   box-shadow: $whiteframe-shadow-15dp;
 }
+
 .md-whiteframe-16dp {
   box-shadow: $whiteframe-shadow-16dp;
 }
+
 .md-whiteframe-17dp {
   box-shadow: $whiteframe-shadow-17dp;
 }
+
 .md-whiteframe-18dp {
   box-shadow: $whiteframe-shadow-18dp;
 }
+
 .md-whiteframe-19dp {
   box-shadow: $whiteframe-shadow-19dp;
 }
+
 .md-whiteframe-20dp {
   box-shadow: $whiteframe-shadow-20dp;
 }
+
 .md-whiteframe-21dp {
   box-shadow: $whiteframe-shadow-21dp;
 }
+
 .md-whiteframe-22dp {
   box-shadow: $whiteframe-shadow-22dp;
 }
+
 .md-whiteframe-23dp {
   box-shadow: $whiteframe-shadow-23dp;
 }
+
 .md-whiteframe-24dp {
   box-shadow: $whiteframe-shadow-24dp;
 }
@@ -7234,17 +7344,13 @@ $virtual-repeat-scrollbar-width: 16px !default;
   }
 }
 
-
 /*
  *  Apply Mixins to create Layout/Flexbox styles
  *
  */
 
-
 @include layouts_for_breakpoint();
 @include layout-padding-margin();
-
-
 
 /**
  * `hide-gt-sm show-gt-lg` should hide from 600px to 1200px
@@ -7258,7 +7364,6 @@ $virtual-repeat-scrollbar-width: 16px !default;
  *         $layout-breakpoint-md:     1280px !default;
  *         $layout-breakpoint-lg:     1920px !default;
  */
-
 
 @media (max-width: $layout-breakpoint-xs - 1) {
   // Xtra-SMALL  SCREEN
@@ -7315,7 +7420,7 @@ $virtual-repeat-scrollbar-width: 16px !default;
 
 @media (min-width: $layout-breakpoint-md) and (max-width: $layout-breakpoint-lg - 1) {
   // LARGE SCREEN
-  .hide,.hide-gt-xs, .hide-gt-sm, .hide-gt-md {
+  .hide, .hide-gt-xs, .hide-gt-sm, .hide-gt-md {
     &:not(.show-gt-xs):not(.show-gt-sm):not(.show-gt-md):not(.show-lg):not(.show) {
       display: none;
     }

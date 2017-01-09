@@ -9,7 +9,6 @@ import 'angular-aria';
 import 'angular-animate';
 import 'angular-material';
 import 'angular-chart.js';
-import 'angular-drag-and-drop-lists';
 
 import 'angular-ui-bootstrap';
 import './templates';

@@ -3,15 +3,15 @@ function TasksService($http) {
 
     const service = {};
     service.tasks = [];
-    
+
     let getTasks = ()=> {
         return $http.get('tasks');
     };
 
-    let postTask = (data)=>{
-        return  $http({
+    let postTask = (data)=> {
+        return $http({
             url: 'tasks',
-            method:'POST',
+            method: 'POST',
             data: data
         })
     };
