@@ -1,0 +1,66 @@
+<div class="container" ng-class="{showModal: home.modalShow}">
+    <div class="btn btn-success col-md-12 col-sm-12 col-xs-12 addTask" ng-click="home.addTask()">Add task</div>
+    <div class="row taskBar">
+
+    </div>
+    <!-- Example row of columns -->
+    <div class="row flexbox">
+        <div class="col-md-4 col-sm-4 col-xs-4 col column created">
+
+            <div class="taskWrapper">
+                <h2>Created ({{(tasks|filter:{state:1,isArchived:false}).length}})</h2>
+                <div ng-repeat="task in tasks | filter:{state:1,isArchived:false}" class="task">
+                    <div class="taskId">ID:{{task.id}}
+                        <span class="glyphicon glyphicon-cog updateTask" data-id="{{task.id}}"
+                              ng-click="home.updateTask(this)"></span>
+                    <span class="glyphicon glyphicon-tasks archivedTask" data-id="{{task.id}}"
+                          ng-click="home.archivedTask(this)" title="Put task to archive"></span>
+                    </div>
+                    <div class="taskText">{{task.text}}</div>
+                    <div class="taskDelivery">{{task.finishDate}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4  col-xs-4 col column in-process">
+
+            <div class="taskWrapper">
+                <h2>In Process ({{(tasks|filter:{state:2,isArchived:false}).length}})</h2>
+                <div ng-repeat="task in tasks | filter:{state:2,isArchived:false}" class="task">
+                    <div class="taskId">ID:{{task.id}}
+
+                        <span class="glyphicon glyphicon-cog updateTask" data-id="{{task.id}}"
+                              ng-click="home.updateTask(this)"></span>
+                        <span class="glyphicon glyphicon-tasks archivedTask" data-id="{{task.id}}"
+                              ng-click="home.archivedTask(this)"  title="Put task to archive"></span>
+                    </div>
+                    <div class="taskText">{{task.text}}</div>
+                    <div class="taskDelivery">{{task.finishDate}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4 col column done">
+
+            <div class="taskWrapper">
+                <h2>Done ({{(tasks|filter:{state:3,isArchived:false}).length}})</h2>
+                <div ng-repeat="task in tasks | filter:{state:3,isArchived:false}" class="task">
+                    <div class="taskId">ID:{{task.id}}
+                        <span class="glyphicon glyphicon-cog updateTask" data-id="{{task.id}}"
+                              ng-click="home.updateTask(this)"></span>
+                    <span class="glyphicon glyphicon-tasks archivedTask" data-id="{{task.id}}"
+                          ng-click="home.archivedTask(this)"  title="Put task to archive"></span>
+                    </div>
+                    <div class="taskText">{{task.text}}</div>
+                    <div class="taskDelivery">{{task.finishDate}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr>
+    <div modal-show="home.modal.show" modal-task="home.modal.selectedTask"
+         modal-directive></div>
+</div>
+
+
+</div>

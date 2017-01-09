@@ -1,0 +1,12 @@
+<div class="container" ng-class="{showModal: home.modalShow}">
+    <div row>
+        <div class="col-md-12 text-center chartTitle">
+            Chart of tasks done in time vs overdue tasks
+        </div>
+    </div>
+    <div class="row">
+        <canvas id="pie" class="chart chart-pie"
+                chart-data="data" chart-labels="labels" chart-options="options">
+        </canvas>
+    </div>
+</div>
